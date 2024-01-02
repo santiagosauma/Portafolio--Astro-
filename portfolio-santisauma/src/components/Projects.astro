@@ -1,0 +1,52 @@
+---
+import Javascript  from '../components/icons/Javascript.astro';
+import HTML from '../components/icons/HTML.astro';
+import Tailwind from '../components/icons/Tailwind.astro';
+const TAGS = {
+    JAVASCRIPT: {
+        name: 'Javascript',
+        class: 'bg-yellow-200 text-black',
+        icon: Javascript
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-red-200 text-black',
+        icon: HTML
+    },
+    TAILWIND: {
+        name: 'Tailwind',
+        class: 'bg-blue-200 text-black',
+        icon: Tailwind
+    }
+}
+
+const PROJECTS =[
+    {
+    title: 'Core Compress - An Advance AI Summarizer',
+    description: 'A web app that summarizes text using an advanced AI model. It uses the Hugging Face API to summarize text. ',
+    link: 'https://github.com/santiagosauma/Proyecto-Inteligencia-Artificial-Resumidor-de-Texto',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.JAVASCRIPT,TAGS.HTML,TAGS.TAILWIND]
+    }
+]
+---
+
+{
+    PROJECTS.map(({image, title, description, tags}) => (
+    <article>
+        <h3 class="text-2xl font-semibold text-purple-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-4 flex-row">
+            {tags.map((tag) =>(
+            <li>
+                <span class={`flex gap-x-2 rounded-full text-s ${tag.class} py-2 px-2`}>
+                    <tag.icon class="size-6"/>
+                    {tag.name}
+                </span>
+            </li>
+            ))}
+        </ul>
+        <img class = "py-2 rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />  
+    </article>
+    ))
+}

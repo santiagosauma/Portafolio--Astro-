@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GithubIcon from '../components/icons/Github.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import BriefcaseIcon from '../components/icons/Briefcase.astro';
+import Code from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+import { DevOverlayBadge } from 'astro/runtime/client/dev-overlay/ui-library/badge.js';
+import Experience from '../components/Experience.astro';
+---
+
+<Layout 
+title="Portafolio de Santiago Sauma - Estudiante, Programador y Desarrollador"
+description="Contrata a Santiago como Intern y enriquece tu equipo con un apasionado y proactivo trabajador destacando en la Nube, Ciberseguridad y Desarrollo Web. Formándose en el ITESM y destacando como alumno, con experiencia en proyectos innovadores, Santiago está preparado para enfrentar desafíos y contribuir al éxito de tu empresa con soluciones tecnológicas avanzadas y un enfoque fresco y dinámico."
+>
+	<main class="px-4">
+		<SectionContainer class="py-40 pb-30">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-2 pb-2">Hola, soy Santiago Sauma<a href="https://www.linkedin.com/in/luissantiagosaumapenaloza/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Open to Oportunities</Badge></a>
+			</h1>
+			<h2 class="lg:text-2xl opacity-80 text-wrap mt-3 max-w-[900px]"><span class="text-purple-200/80">Estudiante de Tecnologías Computacionales en el ITESM</span>, Apasionado por la Nube, Ciberseguridad, el Desarrollo Web y de Aplicaciones. <span class="text-blue-200">Originario de Tarija, Bolivia &#x1F1E7;&#x1F1F4 y actualmente estudiando en Monterrey, México &#x1F1F2;&#x1F1FD</span>. <span opacity-80>Especializándome en resolución de problemas y el desarrollo, siempre busco innovar y aplicar mis conocimientos en tecnología para crear soluciones impactantes.</span></h2>
+			<ul>
+				<nav class="flex gap-x-4 mt-6 flex-wrap">
+					<SocialPill href="https://www.linkedin.com/in/luissantiagosaumapenaloza/">
+						<LinkedInIcon class="size-4 md:size-6" />
+						LinkedIn
+					</SocialPill >
+					<SocialPill href="https://github.com/SantiagoSauma">
+						<GithubIcon class="size-4 md:size-6" />
+						Github
+					</SocialPill >
+					<SocialPill href="mailto:lssaumap@gmail.com">
+						<MailIcon class="size-4 md:size-6" />
+						lssaumap@gmail.com
+					</SocialPill >
+				</nav>
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class = "text-3xl font-semibold flex gap-3 items-center"> <BriefcaseIcon class="size-8"/> Experiencia (Hasta ahora como Estudiante)</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class = "text-3xl font-semibold flex gap-3 items-center"> <Code class="size-8"/> Proyectos</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>

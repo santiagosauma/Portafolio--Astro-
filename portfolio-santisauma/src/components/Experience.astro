@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+    {
+        title: 'Director de Finanzas CyberSecurityTec',
+        date: 'Actualmente...',
+        description: 'Mesa directiva del grupo estudiantil CyberSecurityTec, encargado de la administración de los recursos financieros del grupo.',
+        link: '#',
+    },
+    
+    {
+        title: 'Desarrollador Web Freelance',
+        date: 'Desde 2022',
+        description: 'Creación de sitios web para pequeñas y medianas empresas, utilizando tecnologías como Wordpress, HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, entre otras.'
+    },
+    {
+        title: 'Destacado Programador Competitivo',
+        date: 'Desde 2019',
+        description: 'Participación en competencias de programación competitiva y hackatons, habiendo obtenido podio en 3 ocasiones estatales (Tarija), Cuarto lugar en la competencia ICPC nivel nacional en Bolivia como estudiante invitado, entre más logros en distintas competencias tanto de liderazco como de robótica.'
+    }
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3.5">     
+    {
+        EXPERIENCIE.map(experience => (
+        <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+        </li>
+        ))
+    }             
+    
+</ol>
+
